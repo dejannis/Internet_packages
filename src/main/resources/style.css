@@ -1,0 +1,27 @@
+.root {
+    -fx-background-color: #696973;
+}
+
+.text-field {
+    -fx-background-color: transparent;
+    -fx-border-color: #D5D5D5;
+    -fx-text-fill: white;
+}
+
+.label {
+    -fx-text-fill: white;
+}
+
+.text-field:hover, .text-field:focused {
+    -fx-border-color: #7A778E;
+}
+
+.table-cell {
+    -fx-border-color: #D5D5D5;
+    -fx-text-fill: #4F4F4F;
+}
+
+
+
+
+

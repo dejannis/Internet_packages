@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<HBox xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx" fx:controller="org.example.PackageController" >
+
+    <padding>
+        <Insets bottom="15" left="15" right="15" top="15"/>
+    </padding>
+
+    <children>
+        <VBox spacing="5" prefWidth="200">
+            <children>
+
+                <TextField promptText="First name" fx:id="firstName"/>
+                <TextField promptText="Last name" fx:id="lastname"/>
+                <TextField promptText="Address" fx:id="address"/>
+
+                <Label text="Speed (mb/s:)"/>
+
+                <FlowPane>
+                    <children>
+                        <ToggleButton fx:id="s2" text="2">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="speed"/>
+                            </toggleGroup>
+                        </ToggleButton>
+                        <ToggleButton fx:id="s5" text="5" toggleGroup="$speed"/>
+                        <ToggleButton fx:id="s10" text="10" toggleGroup="$speed"/>
+                        <ToggleButton fx:id="s20" text="20" toggleGroup="$speed"/>
+                        <ToggleButton fx:id="s50" text="50" toggleGroup="$speed"/>
+                        <ToggleButton fx:id="s100" text="100" toggleGroup="$speed"/>
+                    </children>
+                </FlowPane>
+
+                <Label text="Bandwidth:"/>
+
+                <FlowPane>
+                    <children>
+                        <ToggleButton fx:id="b1" text="1">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="bandwidth"/>
+                            </toggleGroup>
+                        </ToggleButton>
+                        <ToggleButton fx:id="b5" text="5" toggleGroup="$bandwidth"/>
+                        <ToggleButton fx:id="b10" text="10" toggleGroup="$bandwidth"/>
+                        <ToggleButton fx:id="b100" text="100" toggleGroup="$bandwidth"/>
+                        <ToggleButton fx:id="flat" text="flat" toggleGroup="$bandwidth"/>
+                    </children>
+                </FlowPane>
+
+                <Label text="Duration"/>
+
+                <HBox>
+                    <children>
+                        <ToggleButton fx:id="one_year" text="1 year">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="duration"/>
+                            </toggleGroup>
+                        </ToggleButton>
+                        <ToggleButton fx:id="two_years" text="2 years" toggleGroup="$duration"/>
+                    </children>
+                </HBox>
+
+                <HBox>
+                    <children>
+                        <Button text="Save Package" fx:id="saveButton" onAction="#savePackage"/>
+                        <Button text="Clear Form" fx:id="clearButton" onAction="#clearForm"/>
+                    </children>
+                </HBox>
+
+                <HBox>
+                    <children>
+                        <Button text="Delete Table Row" fx:id="deleteButton" onAction="#deleteInternetPackage"/>
+                    </children>
+                </HBox>
+
+            </children>
+        </VBox>
+
+
+        <VBox>
+
+            <TableView fx:id="internetPackageTableView">
+                <columns>
+                    <TableColumn text="First Name">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="firstName"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Last Name">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="lastName"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Address">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="address"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Speed (mb/s)">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="speed"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Bandwidth">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="bandwidth"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Duration">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="duration"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                </columns>
+            </TableView>
+
+        </VBox>
+
+    </children>
+</HBox>
